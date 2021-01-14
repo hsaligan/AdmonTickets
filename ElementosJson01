@@ -1,0 +1,16 @@
+//Para pruebas en Postman
+//http://localhost:9091/admonvuelo/guardar
+{
+    "fecha_salida":"2020-10-01",
+    "fecha_llegada":"2020-10-20",
+    "ciudad_origen":"CDMX",
+    "ciudad_destino":"TMP",
+    "nombre_pasajero":"Roberto Lopez",
+    "edad":40,
+    "tiene_bodega":"N",
+    "precio":"200.43",
+    "hora_llegada":"12:00",
+    "hora_salida":"10:20"
+}
+//Consultar por Id
+//http://localhost:9091/admonvuelo/buscarPor/1

@@ -1,0 +1,11 @@
+# Ejecutar maven
+FROM maven:3.6.3-openjdk-8-slim AS build 
+COPY src /TEMP
+copy pom.xml /TEMP
+RUN mvn -f /TEMP/pom.xml clean package
+#Ejecutar Java
+FROM openjdk:8-alpine
+COPY --from=build "TEMP/target/AdmonVuelo-0.0.1.jar" "admonVuelo.jar"
+EXPOSE 9091
+ENTRYPOINT ["java","-jar","app.jar"]
+#Ejecutar en docker: docker build -t Dockerfile.yml .
