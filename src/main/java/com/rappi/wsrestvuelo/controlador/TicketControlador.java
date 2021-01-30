@@ -18,7 +18,7 @@ import com.rappi.wsrestvuelo.modelo.TicketVuelo;
 @RequestMapping("/admonvuelo")
 public class TicketControlador {
 	
-	@Autowired
+	@Autowired(required=true)
 	private I_Ticket iTicket;
 	
 	@PostMapping("/guardar")
