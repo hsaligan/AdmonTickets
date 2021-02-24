@@ -1,0 +1,37 @@
+import groovy.json.JsonSlurperClassic
+
+def jsonParse(def json) {
+    new groovy.json.JsonSlurperClassic().parseText(json)
+}
+pipeline {
+  agent { label 'main' }
+  environment {
+    appName = "AdmonTickets" 
+  }
+  stages {
+
+ stage("paso 1"){
+     
+      steps {
+          script {			
+           echo 'hola mundo'
+        }
+      }
+    }
+  }
+  post {
+      always {          
+          deleteDir()
+           echo 'fase always'
+      }
+      success {
+           echo 'fase success'
+        }
+
+      failure {
+           echo 'fase failure'
+      }
+      
+  }
+}  
+
